@@ -39,13 +39,13 @@ class HocsQueryBuilder {
             RangeQueryBuilder rangeQb = QueryBuilders.rangeQuery("dateReceived");
             if (dateRangeDto.getFrom() != null && !dateRangeDto.getFrom().isEmpty()) {
                 log.debug("dateRange From {}, adding to query", dateRangeDto.getFrom());
-                rangeQb.from(dateRangeDto.getFrom());
+                rangeQb.from(dateRangeDto.getFrom(),true);
             } else {
                 log.debug("dateRange From was null or empty");
             }
             if (dateRangeDto.getTo() != null && !dateRangeDto.getTo().isEmpty()) {
                 log.debug("dateRange To {}, adding to query", dateRangeDto.getTo());
-                rangeQb.to(dateRangeDto.getTo());
+                rangeQb.to(dateRangeDto.getTo(), true);
             } else {
                 log.debug("dateRange To was null or empty");
             }
